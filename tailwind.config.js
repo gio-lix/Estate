@@ -4,6 +4,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    letterSpacing: {
+      too_widest: '.33em'
+    },
     extend: {},
   },
   plugins: [],
