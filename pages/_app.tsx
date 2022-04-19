@@ -12,13 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   Router.events.on('routeChangeComplete', () => {
     NProgress.done();
   });
-
-  return (
-      <>
-
-        <Component {...pageProps} />
-      </>
-  )
+  return <Component {...pageProps} />
 }
 
 export default MyApp
