@@ -17,15 +17,24 @@ const Header: FC<IHeader> = () => {
                  <h5 className='text-xl'>Logo</h5>
                  <nav>
                      <ul className='flex space-x-5'>
-                         <Navbar onclick={onclick} rout='/' text='Buy' active={active} />
-                         <Navbar onclick={onclick} rout='/' text='Rent' active={active} />
-                         <Navbar onclick={onclick} rout='/' text='Sold' active={active} />
-                         <Navbar onclick={onclick} rout='/' text='Share' active={active} />
-                         <Navbar onclick={onclick} rout='/' text='NewHomes' active={active} />
-                         <Navbar onclick={onclick} rout='/' text='Find Agent' active={active} />
-                         <Navbar onclick={onclick} rout='/' text='Live Style' active={active} />
-                         <Navbar onclick={onclick} rout='/' text='News' active={active} />
-                         <Navbar onclick={onclick} rout='/' text='Commercial' active={active}/>
+                         <li>
+                             <Link href="/">
+                                 <a>Home</a>
+                             </Link>
+                         </li>
+                         <li>
+                             <Link href="/search?purpose=for-sale">
+                                 <a>Buy</a>
+                             </Link>
+                         </li>
+                         <li>
+                             <Link href="/search?purpose=for-rent">
+                                 <a>Rent</a>
+                             </Link>
+                         </li>
+                         {/*<Navbar onclick={onclick} rout='/' text='Home' active={active} />*/}
+                         {/*<Navbar onclick={onclick} rout='/search?purpose=for-sale' text='Buy Property' active={active} />*/}
+                         {/*<Navbar onclick={onclick} rout='/search?purpose=for-rent' text='Rent Property' active={active} />*/}
                      </ul>
                  </nav>
              </div>

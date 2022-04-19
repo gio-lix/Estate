@@ -12,3 +12,4 @@ const DetailsOfProperty = () => {
 };
 
 export default DetailsOfProperty;
+

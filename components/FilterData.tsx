@@ -1,14 +1,16 @@
 import {FC, SyntheticEvent, useEffect, useRef, useState} from "react"
 import {AiFillCaretLeft} from 'react-icons/ai'
+import {filterData,getFilterValues} from '../utils/FilterData'
 
 interface IFilterData {
-
+    setFilter: Function
+    filter: boolean
 }
 
-const FilterData: FC<IFilterData> = () => {
+const FilterData: FC<IFilterData> = ({filter, setFilter}) => {
     const filterRef = useRef<HTMLDivElement>(null);
     const [searchFilter, setSearchFilter] = useState<number>(0);
-    const [filter, setFilter] = useState<boolean>(false);
+    // const [dataFilter, setDataFilter] = useState<any>(filterData);
     const [search, setSearch] = useState<string>('');
 
 
@@ -26,6 +28,11 @@ const FilterData: FC<IFilterData> = () => {
     const handleSubmit = (e: SyntheticEvent) => {
         e.preventDefault()
     }
+
+    // const searchProperties = (filterValue: any) => {
+    //     console.log('filterValue', filterValue)
+    // }
+
     return (
         <section className='w-full h-52 grid grid-cols-9 gap-2 text-white'>
             <main ref={filterRef} className='flex flex-col  col-span-7  bg-black bg-opacity-70 rounded p-4'>
@@ -59,7 +66,11 @@ const FilterData: FC<IFilterData> = () => {
                 </div>
                     {filter && (
                         <div className='absolute  -bottom-[115px] bg-gray-700 left-10 right-10  w-auto px-10 h-44 '>
-                            filter
+                            {/*{dataFilter?.map((item: any, i: number) => (*/}
+                            {/*    <select key={i} onChange={(e) => searchProperties({[item.queryName]: e.target.value})}>*/}
+
+                            {/*    </select>*/}
+                            {/*))}*/}
                         </div>
                     )}
             </main>

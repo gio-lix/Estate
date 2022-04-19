@@ -12,23 +12,23 @@ interface ILayout {
 const Layout: FC<ILayout> = ({children}) => {
     const useHeightRef = useRef<HTMLDivElement>(null);
     const [height, setHeight] = useState<boolean>(false);
+    const [filter, setFilter] = useState<boolean>(false);
 
     useEffect(() => {
-
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [useHeightRef])
     const handleScroll = () => {
         if (window.scrollY > 570) {
             setHeight(true)
+            setFilter(false)
         } else if (window.scrollY < 570) {
             setHeight(false)
-
         }
     }
-    console.log('height', height)
+
     return (
-        <div ref={useHeightRef} className=''>
+        <div ref={useHeightRef}>
             <Head>
                 <title>Real EState</title>
             </Head>
@@ -37,7 +37,7 @@ const Layout: FC<ILayout> = ({children}) => {
                 <div className='absolute bg-opacity-50 z-20 top-0 w-full h-[350px] left-0 bg-black '>
                     <div className='px-10 w-full h-full '>
                         <Header/>
-                        <FilterData/>
+                        <FilterData setFilter={setFilter} filter={filter}/>
                     </div>
                 </div>
             </section>
@@ -45,8 +45,6 @@ const Layout: FC<ILayout> = ({children}) => {
             <div className={`fixed z-40  ${height ? 'top-0 bg-gray-700 ' : " -top-36"} ease-out duration-150   left-0 w-full h-20 `}>
 
             </div>
-
-
             <div>
                 {children}
             </div>

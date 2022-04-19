@@ -2,20 +2,10 @@ import {FC} from "react"
 import Image from "next/image";
 import defaultImage from '../../public/state.webp'
 import Link from 'next/link'
+import {DataProps} from "../../type";
 
-interface ICart {
-    property: {
-        coverPhoto: any
-        price: number
-        rentFrequency: string
-        rooms: number
-        title: string
-        baths: number
-        area: number
-        agency: any
-        isVerified: boolean
-        externalID: number
-    }
+export interface ICart {
+    property: DataProps
 }
 
 const Cart: FC<ICart> = ({property}) => {

@@ -10,6 +10,7 @@ interface INavbar {
 }
 
 const Navbar: FC<INavbar> = ({text, rout, active, onclick}) => {
+    console.log("router -. ", rout)
     return (
         <li onClick={() => onclick(text)}
             className={`${active === text ? 'border-b-2 border-white' : ''}  h-14 flex items-center`}>
