@@ -7,20 +7,24 @@ import {FetchData} from "./api/fetchData";
 import {BASE_URL} from "../config";
 
 const Search = ({properties}: any) => {
-    const router = useRouter()
+    // const router = useRouter()
+    console.log("properties -<>", properties)
     const [searchFilter, setSearchFilter] = useState(false);
 
 
-    console.log( properties?.map((el: any ) => console.log("properties -> ",el.purpose)))
+    console.log()
+    // console.log( properties?.map((el: any ) => console.log("properties -> ",el.purpose)))
 
     return (
         <Layout>
             <div>
                 Search
             </div>
-            {properties.map((sale: any) => (
-                <Cart property={sale} key={sale.externalID}/>
-            ))}
+            <div className="grid grid-cols-6 gap-2 my-5 px-10">
+                {properties.map((sale: any) => (
+                    <Cart property={sale} key={sale.externalID}/>
+                ))}
+            </div>
         </Layout>
     );
 };

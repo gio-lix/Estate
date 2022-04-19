@@ -6,15 +6,15 @@ interface IHeader {
 
 }
 const Header: FC<IHeader> = () => {
-    const [active, setActive] = useState<string>('Buy');
-    const onclick = (item: any) => {
-        setActive(item)
-    }
+    // const [active, setActive] = useState<string>('Buy');
+    // const onclick = (item: any) => {
+    //     setActive(item)
+    // }
     return (
      <>
          <header className=' h-20 flex items-center justify-between text-white '>
              <div className='flex items-center space-x-5'>
-                 <h5 className='text-xl'>Logo</h5>
+                 {/*<h5 className='text-xl'>Logo</h5>*/}
                  <nav>
                      <ul className='flex space-x-5'>
                          <li>
@@ -23,7 +23,7 @@ const Header: FC<IHeader> = () => {
                              </Link>
                          </li>
                          <li>
-                             <Link href="/search?purpose=for-sale">
+                             <Link href="/a">
                                  <a>Buy</a>
                              </Link>
                          </li>
