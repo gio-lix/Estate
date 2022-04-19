@@ -7,7 +7,6 @@ const SearchFilters = () => {
     const router = useRouter();
 
     const searchProperty = (filterValues: any) => {
-        console.log("filterValues -> ",filterValues)
         const path = router.pathname
         const {query} = router
 

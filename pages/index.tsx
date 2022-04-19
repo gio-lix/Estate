@@ -6,7 +6,6 @@ import Cart from "../components/pages/Cart";
 import {DataProps} from "../type";
 
 const Home: NextPage = ({propertiesSale, propertiesRent }: any) => {
-
     return (
         <Layout>
             <h4 className='text-center text-xl font-semibold my-5'>rent Properties</h4>

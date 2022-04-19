@@ -2,13 +2,15 @@ import {FC, SyntheticEvent, useEffect, useRef, useState} from "react"
 import {AiFillCaretLeft} from 'react-icons/ai'
 import {filterData,getFilterValues} from '../utils/FilterData'
 import SearchFilters from "./SearchFilters";
-
+import {useRouter} from "next/router";
+import Router from 'next/router'
 interface IFilterData {
     setFilter: Function
     filter: boolean
 }
 
 const FilterData: FC<IFilterData> = ({filter, setFilter}) => {
+    const router = useRouter()
     const filterRef = useRef<HTMLDivElement>(null);
     const [searchFilter, setSearchFilter] = useState<number>(0);
     // const [dataFilter, setDataFilter] = useState<any>(filterData);
@@ -28,11 +30,13 @@ const FilterData: FC<IFilterData> = ({filter, setFilter}) => {
 
     const handleSubmit = (e: SyntheticEvent) => {
         e.preventDefault()
+        // router.push({
+        //     pathname: '/search',
+        //     query: { search: `${search}` }
+        // })
     }
 
-    // const searchProperties = (filterValue: any) => {
-    //     console.log('filterValue', filterValue)
-    // }
+
 
     return (
         <section className='w-full h-52 grid grid-cols-9 gap-2 text-white'>

@@ -8,6 +8,10 @@ import {BASE_URL} from "../config";
 
 const Search = ({properties}: any) => {
     const router = useRouter()
+    const [filterSearch, setFilterSearch] = useState(properties);
+
+    // const searchValue = router.query.search !== ''
+    // const filterData = properties.filter( (e: any) => e.title.toLowerCase().includes(searchValue))
 
     return (
         <Layout>
@@ -15,7 +19,7 @@ const Search = ({properties}: any) => {
                 <h1>{router.query.purpose}</h1>
             </section>
             <div className="grid grid-cols-6 gap-2 my-5 px-10">
-                {properties.map((sale: any) => (
+                {(properties).map((sale: any) => (
                     <Cart property={sale} key={sale.externalID}/>
                 ))}
             </div>
