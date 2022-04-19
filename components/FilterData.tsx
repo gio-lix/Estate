@@ -1,6 +1,7 @@
 import {FC, SyntheticEvent, useEffect, useRef, useState} from "react"
 import {AiFillCaretLeft} from 'react-icons/ai'
 import {filterData,getFilterValues} from '../utils/FilterData'
+import SearchFilters from "./SearchFilters";
 
 interface IFilterData {
     setFilter: Function
@@ -65,12 +66,8 @@ const FilterData: FC<IFilterData> = ({filter, setFilter}) => {
                     <button onClick={() => setFilter(!filter)} className='bg-gray-700 text-gray-300 group-hover:text-white px-4'>Search Property By Filter</button>
                 </div>
                     {filter && (
-                        <div className='absolute  -bottom-[115px] bg-gray-700 left-10 right-10  w-auto px-10 h-44 '>
-                            {/*{dataFilter?.map((item: any, i: number) => (*/}
-                            {/*    <select key={i} onChange={(e) => searchProperties({[item.queryName]: e.target.value})}>*/}
-
-                            {/*    </select>*/}
-                            {/*))}*/}
+                        <div className='absolute  -bottom-[115px] bg-gray-700 left-10 right-10  w-auto px-10 h-44 flex items-center '>
+                            <SearchFilters/>
                         </div>
                     )}
             </main>

@@ -41,7 +41,6 @@ const Layout: FC<ILayout> = ({children}) => {
                     </div>
                 </div>
             </section>
-
             <div className={`fixed z-40  ${height ? 'top-0 bg-gray-700 ' : " -top-36"} ease-out duration-150   left-0 w-full h-20 `}>
 
             </div>

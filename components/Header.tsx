@@ -6,10 +6,10 @@ interface IHeader {
 
 }
 const Header: FC<IHeader> = () => {
-    // const [active, setActive] = useState<string>('Buy');
-    // const onclick = (item: any) => {
-    //     setActive(item)
-    // }
+    const [active, setActive] = useState<string>('Buy');
+    const onclick = (item: any) => {
+        setActive(item)
+    }
     return (
      <>
          <header className=' h-20 flex items-center justify-between text-white '>
@@ -23,7 +23,7 @@ const Header: FC<IHeader> = () => {
                              </Link>
                          </li>
                          <li>
-                             <Link href="/a">
+                             <Link href="/search?purpose=for-sale">
                                  <a>Buy</a>
                              </Link>
                          </li>

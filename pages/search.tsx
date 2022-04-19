@@ -7,19 +7,13 @@ import {FetchData} from "./api/fetchData";
 import {BASE_URL} from "../config";
 
 const Search = ({properties}: any) => {
-    // const router = useRouter()
-    console.log("properties -<>", properties)
-    const [searchFilter, setSearchFilter] = useState(false);
-
-
-    console.log()
-    // console.log( properties?.map((el: any ) => console.log("properties -> ",el.purpose)))
+    const router = useRouter()
 
     return (
         <Layout>
-            <div>
-                Search
-            </div>
+            <section className='flex justify-center my-5'>
+                <h1>{router.query.purpose}</h1>
+            </section>
             <div className="grid grid-cols-6 gap-2 my-5 px-10">
                 {properties.map((sale: any) => (
                     <Cart property={sale} key={sale.externalID}/>
