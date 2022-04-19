@@ -3,7 +3,6 @@ import Image from "next/image";
 import defaultImage from '../../public/state.webp'
 import Link from 'next/link'
 import {DataProps} from "../../type";
-import Test from "../Test";
 
 export interface ICart {
     property: DataProps
@@ -42,7 +41,6 @@ const Cart: FC<ICart> = ({property:
                     </div>
                 </div>
                 <div className=' h-[155px] px-5'>
-                    <Test />
                     <p>{title}</p>
                 </div>
             </div>
